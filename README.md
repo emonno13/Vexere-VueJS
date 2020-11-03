@@ -46,6 +46,13 @@ app.get(/.*/, function(req, res){
 
 app.listen(port)
 ```
+$ cd my-project/
+$ git init
+$ heroku git:remote -a vexere-vuejs
+
+$ git add .
+$ git commit -am "make it better"
+$ git push heroku master
 
 trong cmd : gõ heroku login
 
