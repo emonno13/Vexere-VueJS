@@ -3,9 +3,9 @@
 ## HEROKU DEPLOY
 yarn add express
 
-yarn build -> create file dist
+yarn build -> create folder "dist"
 
-create server.js file at root project
+create "server.js" file at root project
 
 server.js :
 
