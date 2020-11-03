@@ -1,5 +1,47 @@
 # VEXERE VUEJS
 
+## HEROKU DEPLOY
+yarn add express
+
+yarn build -> create file dist
+
+create server.js file at root project
+
+server.js :
+
+```
+const express = require('express');
+const port = process.env.PORT || 8080;
+
+const app = express();
+
+app.use(express.static(__dirname + "/dist/"));
+app.get(/.*/, function(req, res){
+    res.sendFile(__dirname + "/dist/index.html");
+});
+
+app.listen(port)
+```
+
+
+
+$ heroku login
+
+$ cd my-project/
+
+$ git init
+
+$ heroku git:remote -a vexere-vuejs
+
+$ git rm yarn.lock || git rm package-lock.json ( should )
+
+$ git add .
+
+$ git commit -am "make it better"
+
+$ git push heroku master
+
+
 ## Project setup
 ```
 npm install
@@ -20,44 +62,3 @@ npm run build
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-"# Vexere-VueJS" 
-npm run build
-
-xóa dist trong file git ignore
-
-npm install express
-
-yarn build -> tạo file dist
-
-tạo server.js tại thư mục gốc
-
-gõ dòng lệnh này vào
-
-```
-const express = require('express');
-const port = process.env.PORT || 8080;
-
-const app = express();
-
-app.use(express.static(__dirname + "/dist/"));
-app.get(/.*/, function(req, res){
-    res.sendFile(__dirname + "/dist/index.html");
-});
-
-app.listen(port)
-```
-$ cd my-project/
-$ git init
-$ heroku git:remote -a vexere-vuejs
-
-$ git add .
-$ git commit -am "make it better"
-$ git push heroku master
-
-trong cmd : gõ heroku login
-
-heroku git: remote -a 'project name'
-
-git push heroku master
