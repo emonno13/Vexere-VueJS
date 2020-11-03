@@ -29,6 +29,8 @@ xóa dist trong file git ignore
 
 npm install express
 
+yarn build -> tạo file dist
+
 tạo server.js tại thư mục gốc
 
 gõ dòng lệnh này vào
